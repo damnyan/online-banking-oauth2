@@ -1,0 +1,5 @@
+/report
+.phpunit.result.cache
+/vendor
+phpunit.xml
+.vscode

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" backupStaticAttributes="false" bootstrap="vendor/autoload.php" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnError="false" stopOnFailure="false" verbose="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">./src</directory>
+    </include>
+  </coverage>
+  <testsuites>
+    <testsuite name="Test Suite">
+      <directory suffix="Test.php">./tests</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="APP_ENV" value="testing"/>
+    <env name="APP_DEBUG" value="true"/>
+
+    <env name="BPI_CLIENT_ID" value="BPI_CLIENT_ID"/>
+    <env name="BPI_CLIENT_SECRET" value="BPI_CLIENT_SECRET"/>
+    <env name="BPI_REDIRECT" value="https://redirect.url/api/v1/banks/bpi/oauth/redirect"/>
+    <env name="BPI_AUTH_URI" value="https://testoauth.bpi.com.ph/bpi/api/"/>
+    <env name="BPI_API_GATEWAY_URI" value="https://apitest.bpi.com.ph/bpi/api/"/>
+    <env name="BPI_AUTH_PROXY" value="1.1.1.1:8000"/>
+
+    <env name="UNIONBANK_URI" value="https://api-uat.unionbankph.com/partners/sb/"/>
+    <env name="UNIONBANK_CLIENT_ID" value="UNIONBANK_CLIENT_ID"/>
+    <env name="UNIONBANK_CLIENT_SECRET" value="UNIONBANK_CLIENT_SECRET"/>
+    <env name="UNIONBANK_REDIRECT" value="http://localhost:1234"/>
+    <env name="UNIONBANK_PARTNER_ID" value="UNIONBANK_PARTNER_ID"/>
+
+    <env name="APP_PUBLIC_KEY" value="/../storage/bpi/client.crt"/>
+    <env name="APP_PRIVATE_KEY" value="/../storage/bpi/client.key"/>
+    <env name="SENDER_PUBLIC_KEY" value="/../storage/bpi/bpi.pub"/>
+  </php>
+</phpunit>
